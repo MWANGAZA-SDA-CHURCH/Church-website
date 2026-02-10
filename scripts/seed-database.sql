@@ -1,0 +1,3 @@
+-- Create initial admin user
+-- Password: admin123 (hashed)
+-- This script should be run once to set up the database
