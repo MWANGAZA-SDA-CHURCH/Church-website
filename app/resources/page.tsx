@@ -92,10 +92,6 @@ const resourceCategories = [
   { id: 'video', name: 'Videos', icon: Play }
 ]
 
-export const metadata = {
-  title: "Resources | Mwangaza SDA Church",
-  description: "Access sermons, Bible studies, and spiritual resources for your growth.",
-}
 
 const fundamentalBeliefs = [
   "The Holy Scriptures",
@@ -239,7 +235,7 @@ export default function ResourcesPage() {
             <div className="mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-2">
                 {activeCategory === 'all' ? 'All Resources' : 
-                 resourceCategories.find(c => c.id === activeCategory)?.name + 's'}
+                 resourceCategories.find(c => c.id === activeCategory)?.name}
               </h2>
               <p className="text-muted-foreground">
                 {filteredResources.length} {filteredResources.length === 1 ? 'resource' : 'resources'} found

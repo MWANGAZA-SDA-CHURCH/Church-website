@@ -98,12 +98,7 @@ export function HeroCarousel() {
               }`}
             >
               <div className="max-w-3xl">
-                <div className="mb-5 inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5">
-                  <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100">
-                    Welcome to Mwangaza SDA
-                  </span>
-                </div>
+                
                 <div className="mb-4">
                   <span className="inline-block px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full text-white text-xs sm:text-sm font-medium">
                     {slide.subtitle}

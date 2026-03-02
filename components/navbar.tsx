@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +13,13 @@ export function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/ministries", label: "Ministries" },
-    { href: "/resources", label: "Resources" },
+    { 
+      label: "Resources",
+      children: [
+        { href: "/blog", label: "Blog" },
+        { href: "/resources", label: "Spiritual Resources" }
+      ]
+    },
     { href: "/events", label: "Events" },
     { href: "/contact", label: "Contact" },
   ]
@@ -33,21 +39,59 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-1 py-2 text-sm font-medium transition-colors ${
-                    isActive 
-                      ? "text-teal-600 border-b-2 border-teal-600" 
-                      : "text-gray-700 hover:text-teal-600 hover:border-b-2 hover:border-teal-600"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )
+            {navItems.map((item, index) => {
+              if (item.children) {
+                const isActive = item.children.some(child => pathname === child.href)
+                return (
+                  <div key={index} className="relative group">
+                    <button
+                      className={`px-1 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                        isActive 
+                          ? "text-teal-600 border-b-2 border-teal-600" 
+                          : "text-gray-700 hover:text-teal-600 hover:border-b-2 hover:border-teal-600"
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown className="h-4 w-4" />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      {item.children.map((child) => {
+                        const childIsActive = pathname === child.href
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`block px-4 py-2 text-sm font-medium transition-colors ${
+                              childIsActive
+                                ? "bg-teal-50 text-teal-700"
+                                : "text-gray-700 hover:bg-gray-100 hover:text-teal-700"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              } else {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`px-1 py-2 text-sm font-medium transition-colors ${
+                      isActive 
+                        ? "text-teal-600 border-b-2 border-teal-600" 
+                        : "text-gray-700 hover:text-teal-600 hover:border-b-2 hover:border-teal-600"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              }
             })}
           </div>
 
@@ -71,22 +115,58 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive
-                      ? "bg-teal-50 text-teal-700"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-teal-700"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )
+            {navItems.map((item, index) => {
+              if (item.children) {
+                const isActive = item.children.some(child => pathname === child.href)
+                return (
+                  <div key={index}>
+                    <div
+                      className={`block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive
+                          ? "bg-teal-50 text-teal-700"
+                          : "text-gray-700 hover:bg-gray-100 hover:text-teal-700"
+                      }`}
+                    >
+                      {item.label}
+                    </div>
+                    <div className="pl-4 space-y-1">
+                      {item.children.map((child) => {
+                        const childIsActive = pathname === child.href
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-3 py-2 rounded-md text-sm font-medium ${
+                              childIsActive
+                                ? "bg-teal-50 text-teal-700"
+                                : "text-gray-600 hover:bg-gray-100 hover:text-teal-700"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              } else {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                      isActive
+                        ? "bg-teal-50 text-teal-700"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-teal-700"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              }
             })}
           </div>
         </div>

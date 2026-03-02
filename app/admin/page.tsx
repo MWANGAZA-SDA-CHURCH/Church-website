@@ -120,10 +120,12 @@ export default function AdminDashboardPage() {
             <div className="p-4 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold" style={{ background: "rgba(255,255,255,0.2)" }}>M</div>
-                <div>
-                  <h2 className="font-serif font-bold">Mwangaza SDA</h2>
-                  <p className="text-xs opacity-70">Church Admin</p>
-                </div>
+                <img
+                src="/logow.png"
+                alt="Mwangaza SDA Church"
+                className="h-8 w-12"
+                style={{ objectFit: 'contain' }}
+              />
               </div>
               <button onClick={() => setMobileSidebarOpen(false)} className="p-2 hover:bg-white/10 rounded-lg"><X className="w-5 h-5" /></button>
             </div>
