@@ -50,6 +50,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0f172a 0%, #014d4e 40%, #0f172a 100%)" }}>
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <img 
+          src="/church.jpg"
+          alt="Church Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        />
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse" style={{ background: "rgba(13, 148, 136, 0.3)" }} />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse" style={{ background: "rgba(6, 182, 212, 0.2)", animationDelay: "1s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ background: "rgba(13, 148, 136, 0.1)", animationDelay: "2s" }} />
@@ -58,9 +63,14 @@ export default function LoginPage() {
       <main className="flex-1 flex items-center justify-center py-12 px-4 relative z-10">
         <Card className="w-full max-w-md shadow-2xl border-0 rounded-2xl overflow-hidden" style={{ background: "rgba(255, 255, 255, 0.08)", backdropFilter: "blur(24px)", border: "1px solid rgba(255, 255, 255, 0.15)" }}>
           <CardHeader className="text-center space-y-2 pb-6">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg" style={{ background: "linear-gradient(135deg, #0d9488, #06b6d4)" }}>
-              <LogIn className="h-8 w-8 text-white" />
-            </div>
+            
+              <img
+                src="/logow.png"
+                alt="Mwangaza SDA Church"
+                className="h-25 w-55 mx-auto"
+                style={{ objectFit: 'contain' }}
+              />
+            
             <CardTitle className="text-3xl font-serif font-bold text-white">Welcome Back</CardTitle>
             <CardDescription className="text-white/70">Sign in to your church admin account</CardDescription>
           </CardHeader>

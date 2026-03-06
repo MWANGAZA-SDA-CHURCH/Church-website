@@ -3,12 +3,11 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
-import { Calendar, Users, BookOpen, Heart, ArrowRight, Clock } from "lucide-react"
+import { Calendar, Users, BookOpen, Heart, ArrowRight, Clock, HelpCircle, MessageCircle, Sparkles, Star } from "lucide-react"
 import { HeroCarousel } from "@/components/hero-carousel"
 import { EventsPreview } from "@/components/events-preview"
 import { PastorMessage } from "@/components/pastor-message"
 import { GivingSection } from "@/components/giving-section"
-import { MemberSearchFloating } from "@/components/member-search-floating"
 import { AnnouncementsSection } from "@/components/announcements-section"
 
 export default function HomePage() {
@@ -22,7 +21,7 @@ export default function HomePage() {
         <PastorMessage />
 
         {/* Normal Sabbath Program & Service Times */}
-        <section id="sabbath-program" className="py-20 bg-slate-50">
+        <section id="sabbath-program" className="py-20 bg-gradient-to-br from-slate-50 to-teal-50/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -182,49 +181,58 @@ export default function HomePage() {
         <EventsPreview />
 
         {/* Connect With Us – Features Grid */}
-        <section id="connect" className="py-16 bg-gray-50">
+        <section id="connect" className="py-20" style={{backgroundColor: 'rgb(248,251,250)'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 mb-6">
+                <Sparkles className="h-8 w-8 text-white" />
+              </div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">Connect With Us</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
-                Discover the many ways you can be part of our church family
+                Discover the many ways you can be part of our vibrant church family
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 gradient-teal rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <Calendar className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Events</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    Stay updated with our church activities and special programs
-                  </p>
-                  <Link href="/events">
-                    <Button variant="ghost" size="sm" className="text-teal-600 hover:text-teal-700">
-                      View All <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <Calendar className="h-8 w-8" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">Events</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      Stay updated with our church activities and special programs
+                    </p>
+                    <Link href="/events">
+                      <Button className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        View All <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 gradient-teal rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <Users className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Ministries</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    Get involved in ministries that match your passions and gifts
-                  </p>
-                  <Link href="/ministries">
-                    <Button variant="ghost" size="sm" className="text-teal-600 hover:text-teal-700">
-                      Explore <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <Users className="h-8 w-8" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">Ministries</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      Get involved in ministries that match your passions and gifts
+                    </p>
+                    <Link href="/ministries">
+                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        Explore <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
@@ -243,33 +251,33 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 gradient-teal rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <Heart className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">Membership</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    Search for members or manage your church transfer
-                  </p>
-                  <Link href="/members/search">
-                    <Button variant="ghost" size="sm" className="text-teal-600 hover:text-teal-700">
-                      Search <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <Heart className="h-8 w-8" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">Membership</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      Search for members or manage your church transfer
+                    </p>
+                    <Link href="/members/search">
+                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        Search <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Announcements Section */}
-        <AnnouncementsSection />
-
         <GivingSection />
 
         {/* New Visitor CTA Section */}
-        <section id="new-here" className="py-16 bg-white">
+        <section id="new-here" className="py-16 bg-gradient-to-b from-teal-50/30 to-slate-50/50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">New to Mwangaza SDA?</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed text-pretty">
@@ -287,7 +295,6 @@ export default function HomePage() {
       </main>
 
       <Footer />
-      <MemberSearchFloating />
     </div>
   )
 }
