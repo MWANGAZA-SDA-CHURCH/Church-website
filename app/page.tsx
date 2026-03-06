@@ -235,7 +235,7 @@ export default function HomePage() {
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     Watch or listen to inspiring messages from our pastors
                   </p>
-                  <Link href="/sermons">
+                  <Link href="https://www.youtube.com/@SDACHURCHMWANGAZA" target="_blank" rel="noopener noreferrer">
                     <Button variant="ghost" size="sm" className="text-teal-600 hover:text-teal-700">
                       Listen <ArrowRight className="ml-1 h-4 w-4" />
                     </Button>

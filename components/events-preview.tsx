@@ -37,15 +37,7 @@ export function EventsPreview() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Upcoming Events</h2>
             <p className="text-xl text-gray-600">Join us for these special programs and activities</p>
           </div>
-          <Link
-            href="/events"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-teal-600 text-teal-600 font-semibold rounded-lg hover:bg-teal-600 hover:text-white transition-all duration-300"
-          >
-            View All Events
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+         
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,6 +86,19 @@ export function EventsPreview() {
             </div>
           ))}
         </div>
+
+         {/*events link*/}
+         <div  className="flex justify-end mt-8">
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-teal-600 text-teal-600 font-semibold rounded-lg hover:bg-teal-600 hover:text-white transition-all duration-300"
+          >
+            View All Events
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+          </div>
       </div>
     </section>
   )

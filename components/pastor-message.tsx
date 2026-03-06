@@ -16,7 +16,7 @@ export function PastorMessage() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-                  <h3 className="text-xl font-bold text-white">Pastor Richard Ogemba</h3>
+                  <h3 className="text-xl font-bold text-white">Pastor Richard Ogembo</h3>
                   <p className="text-white/90 text-sm mt-1">Lead Pastor</p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export function PastorMessage() {
                   className="w-20 h-20 rounded-lg border-2 border-teal-200"
                 />
                 <div>
-                  <p className="font-bold text-gray-900 text-xl">Richard Ogemba</p>
+                  <p className="font-bold text-gray-900 text-xl">Richard Ogembo</p>
                   <p className="text-gray-600"> Pastor, Mwangaza SDA Church</p>
                   <p className="text-sm text-teal-600 mt-1">"Let your light shine before others"</p>
                 </div>

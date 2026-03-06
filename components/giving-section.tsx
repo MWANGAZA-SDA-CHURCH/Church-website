@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Globe, Heart, Handshake } from "lucide-react"
+import { ArrowRight, Users, Globe, Heart, Handshake, Church } from "lucide-react"
 import Link from "next/link"
 
 export function GivingSection() {
@@ -67,8 +67,24 @@ export function GivingSection() {
                 </div>
               </CardContent>
             </Card>
+            {/*church upkeep*/}
+          <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Church className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900 mb-1">Church Upkeep</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Support church facility maintanance
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-
+          
           {/* Partnership Card */}
           <div className="bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 border border-teal-200 rounded-xl p-8 flex flex-col justify-between">
             <div>
