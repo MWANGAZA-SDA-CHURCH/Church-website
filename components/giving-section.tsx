@@ -121,7 +121,7 @@ export function GivingSection() {
         </div>
 
         {/* Contact Methods */}
-        <div className="bg-white border border-gray-200 rounded-xl p-8">
+       {/* <div className="bg-white border border-gray-200 rounded-xl p-8">
           <h3 className="font-serif text-2xl font-bold text-gray-900 mb-8 text-center">Contact Information</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -137,7 +137,7 @@ export function GivingSection() {
               <p className="font-semibold text-gray-900">Weekdays 9AM - 5PM</p>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   )

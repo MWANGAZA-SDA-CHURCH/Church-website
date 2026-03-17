@@ -41,7 +41,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Address</h3>
-                      <p className="text-muted-foreground">PWG6+M6W, Mwangaza Rd, Nairobi, Kenya</p>
+                      <p className="text-muted-foreground">P.O Box 7302-00300, Nairobi, Kenya, PWG6+M6W, Mwangaza Rd, Nairobi, Kenya</p>
                     </div>
                   </div>
 
@@ -52,7 +52,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
                       <p className="text-muted-foreground">+254 700 000 000</p>
-                      <p className="text-muted-foreground">+254 722 111 111</p>
+                      <p className="text-muted-foreground">+254 140 353450</p>
                     </div>
                   </div>
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
                       <p className="text-muted-foreground">info@mwangazasda.org</p>
-                      <p className="text-muted-foreground">pastor@mwangazasda.org</p>
+                      <p className="text-muted-foreground"></p>
                     </div>
                   </div>
 

@@ -32,7 +32,7 @@ export default function givingPage() {
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
               {/* Contact Info */}
               <div className="lg:col-span-1">
-                <h2 className="font-serif text-2xl font-bold text-foreground mb-8">Mpesa Payment Information</h2>
+                <h2 className="font-serif text-2xl font-bold text-foreground mb-8 text-teal-600">Mpesa Payment Information</h2>
 
                 <div className="space-y-6 justify-center">
                   <div className="flex flex-col place-items-center gap-4">
@@ -40,7 +40,7 @@ export default function givingPage() {
                       <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
                       </div>*/}
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Tithes and Offerings</h3>
+                      <h3 className="font-semibold  mb-1">Tithes and Offerings</h3>
                       <p className="text-muted-foreground">951701</p>
                     </div>
                   </div>
@@ -50,7 +50,7 @@ export default function givingPage() {
                       <Phone className="h-6 w-6 text-primary flex-shrink-0" />
                         </div>*/}
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Church Development</h3>
+                      <h3 className="font-semibold text-foreground mb-1 ">Church Development</h3>
 
                       <p className="text-muted-foreground">951727</p>
                     </div>
@@ -81,7 +81,7 @@ export default function givingPage() {
               </div>
   {/* Bank Details */}
       <div className="lg:col-span-1">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-8">Bank Details</h2>
+        <h2 className="font-serif text-2xl font-bold text-foreground mb-8 text-teal-600">Bank Details</h2>
         <div className="space-y-6 justify-center">
           <div className="flex flex-col place-items-center gap-4">
             {/*<div className="p-3 rounded-lg bg-primary/10 h-fit">
