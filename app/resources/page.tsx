@@ -4,6 +4,7 @@ import { BookOpen, Play, Users, Download, Search, ChevronDown, ChevronUp, Filter
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
+import Link from 'next/link'
 
 // Types for our resources
 interface Resource {
@@ -16,6 +17,7 @@ interface Resource {
   description: string
   thumbnail?: string
   downloadUrl?: string
+  videoUrl?: string
   views?: number
   tags?: string[]
 }
@@ -31,6 +33,7 @@ const mockResources: Resource[] = [
     duration: "180 min",
     description: "A powerful message about men in Christ.",
     thumbnail: "/images/sermons/faith.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=NpDhKpUdgLs",
     views: 245,
     tags: ["faith", "trust", "sermon"]
   },
@@ -43,6 +46,7 @@ const mockResources: Resource[] = [
     duration: "180 min",
     description: " A Woman Faith And Prayer.",
     thumbnail: "/images/sermons/abundant-life.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=bSrVu7gMZu8&t=6s",
     views: 198,
     tags: ["abundant life", "sermon", "spiritual growth"]
   },
@@ -55,6 +59,7 @@ const mockResources: Resource[] = [
     duration: "38 min",
     description: "Understanding your calling and living out God's purpose for your life.",
     thumbnail: "/images/sermons/purpose.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=9_vxXDWXLEo",
     views: 312,
     tags: ["purpose", "calling", "sermon"]
   },
@@ -291,7 +296,16 @@ export default function ResourcesPage() {
                           >
                             <Download className="h-5 w-5" />
                           </a>
-                        ) : (
+                        ) :  resource.videoUrl ?(
+                           <Link 
+                            href={resource.videoUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="p-3 bg-white/90 rounded-full text-foreground hover:bg-white transition-all transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100"
+                          >
+                            <Play className="h-5 w-5 fill-current" />
+                          </Link>
+                          ) : (
                           <button className="p-3 bg-white/90 rounded-full text-foreground hover:bg-white transition-all transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
                             <Play className="h-5 w-5 fill-current" />
                           </button>
