@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarTrigger, SidebarProvider } from "@/components/ui/sidebar"
 import { Plus, Calendar, Trash2, Edit2 } from "lucide-react"
 
 const dummyEvents = [
@@ -44,7 +44,8 @@ export default function AdminEventsPage() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <SidebarProvider>
+      <div className="flex flex-col h-screen bg-gray-50">
       <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
         <div className="flex items-center gap-4 p-4">
           <SidebarTrigger />
@@ -52,7 +53,7 @@ export default function AdminEventsPage() {
             <h1 className="text-2xl font-bold text-gray-900">Events Management</h1>
             <p className="text-sm text-gray-600">Create and manage church events</p>
           </div>
-          <Button className="gradient-teal text-white">
+          <Button className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white">
             <Plus className="h-4 w-4 mr-2" />
             Create Event
           </Button>
@@ -106,5 +107,6 @@ export default function AdminEventsPage() {
         </div>
       </main>
     </div>
+    </SidebarProvider>
   )
 }

@@ -8,6 +8,7 @@ import Link from "next/link"
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Heart, MessageCircle, Share2, Bookmark } from "lucide-react"
 import { useState } from "react"
 import { notFound } from "next/navigation"
+import { cn } from "@/lib/utils"
 
 const blogPosts = [
   {
@@ -823,7 +824,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
     if (navigator.share) {
       navigator.share({
         title: post.title,
-        text: post.excerpt,
+        text: post.content.substring(0, 150) + '...',
         url: window.location.href
       })
     } else {

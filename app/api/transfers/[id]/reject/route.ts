@@ -16,7 +16,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       SET 
         status = 'REJECTED',
         approval_date = CURRENT_TIMESTAMP,
-        approved_by_id = ${user.member?.id || null},
+        approved_by_id = ${user.id || null},
         updated_at = CURRENT_TIMESTAMP
       WHERE id = ${id}
       RETURNING *

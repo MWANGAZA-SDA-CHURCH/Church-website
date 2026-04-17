@@ -26,7 +26,7 @@ export default function HomePage() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-teal-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-teal-600/40">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/40">
                   <Clock className="h-6 w-6" />
                 </div>
                 <div>
@@ -45,7 +45,7 @@ export default function HomePage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700 mb-1">
                   Mid-week Vespers
                 </p>
-                <p className="font-semibold text-gray-900">Wednesday &amp; Friday</p>
+                <p className="font-semibold text-gray-900">Wednesday & Friday</p>
                 <p className="text-sm text-gray-600">6:30 PM – 7:30 PM</p>
               </div>
             </div>
@@ -193,11 +193,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
                 <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-8 text-center">
+                  <CardContent className="p-6 sm:p-8 text-center">
                     <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <Calendar className="h-8 w-8" />
                     </div>
@@ -217,7 +217,7 @@ export default function HomePage() {
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
                 <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-8 text-center">
+                  <CardContent className="p-6 sm:p-8 text-center">
                     <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <Users className="h-8 w-8" />
                     </div>
@@ -235,7 +235,7 @@ export default function HomePage() {
               </div>
 
               <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-6 sm:p-8 text-center">
                   <div className="w-12 h-12 gradient-teal rounded-full flex items-center justify-center text-white mx-auto mb-4">
                     <BookOpen className="h-6 w-6" />
                   </div>
@@ -254,17 +254,17 @@ export default function HomePage() {
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
                 <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-400 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
-                      <Heart className="h-8 w-8" />
+                  <CardContent className="p-6 sm:p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-400 flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <Calendar className="h-8 w-8" />
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-gray-900">Membership</h3>
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">Giving</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                      Search for members or manage your church transfer
+                      Support our ministry through online giving options
                     </p>
-                    <Link href="/members/search">
-                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                        Search <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link href="/giving">
+                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                        Give Online <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
                   </CardContent>
@@ -292,8 +292,19 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+      {/* Floating Action Button */}
+      <Link href="/devotions">
+        <div className="fixed bottom-8 right-8 z-50 group">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 shadow-2xl shadow-teal-500/30 flex items-center justify-center relative overflow-hidden hover:scale-110 transition-all duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+            <BookOpen className="h-7 w-7 text-white relative z-10" />
+          </div>
+          <div className="absolute -top-8 right-0 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            Daily Devotions
+          </div>
+        </div>
+      </Link>
       </main>
-
       <Footer />
     </div>
   )

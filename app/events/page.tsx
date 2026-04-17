@@ -1,15 +1,7 @@
 "use client"
 
+import React from "react"
 import { Calendar, MapPin, Clock, Users, ArrowRight, Sparkles, Heart, Star, BookOpen } from "lucide-react"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { 
-  Calendar01Icon, 
-  Clock01Icon, 
-  ArrowRight01Icon, 
-  SparklesIcon, 
-  StarIcon, 
-  BookOpenIcon 
-} from "@hugeicons/core-free-icons"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { useState } from "react"
@@ -90,13 +82,13 @@ export default function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   
   const categories = [
-    { id: 'all', name: 'All Events', icon: SparklesIcon },
-    { id: 'weekly', name: 'Weekly', icon: Calendar01Icon },
-    { id: 'youth', name: 'Youth', icon: StarIcon },
+    { id: 'all', name: 'All Events', icon: Sparkles },
+    { id: 'weekly', name: 'Weekly', icon: Calendar },
+    { id: 'youth', name: 'Youth', icon: Star },
     { id: 'women', name: 'Women', icon: Heart },
     { id: 'men', name: 'Men', icon: Users },
     { id: 'community', name: 'Community', icon: Heart },
-    { id: 'special', name: 'Special', icon: StarIcon },
+    { id: 'special', name: 'Special', icon: Star },
   ]
 
   const filteredEvents = selectedCategory === 'all' 
@@ -237,11 +229,7 @@ export default function EventsPage() {
                       : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                   }`}
                 >
-                  {category.id === 'all' || category.id === 'weekly' || category.id === 'youth' || category.id === 'special' ? (
-                    <HugeiconsIcon icon={category.icon} className="h-4 w-4" />
-                  ) : (
-                    <category.icon className="h-4 w-4" />
-                  )}
+                  <category.icon className="h-4 w-4" />
                   <span>{category.name}</span>
                 </button>
               ))}

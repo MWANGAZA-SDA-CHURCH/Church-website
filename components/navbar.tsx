@@ -16,6 +16,7 @@ export function Navbar() {
     { 
       label: "Resources",
       children: [
+        { href: "/devotions", label: "Daily Devotions" },
         { href: "/blog", label: "Blog" },
         { href: "/resources", label: "Spiritual Resources" }
       ]
